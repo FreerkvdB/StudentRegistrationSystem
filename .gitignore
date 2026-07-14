@@ -1,0 +1,18 @@
+# NetBeans generated files
+/build/
+/dist/
+/nbproject/private/
+
+# Compiled files
+*.class
+
+# Tomcat files
+/web/WEB-INF/classes/
+/web/WEB-INF/lib/
+
+# IDE files
+.idea/
+*.iml
+
+# Logs
+*.log
