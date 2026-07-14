@@ -1,72 +1,131 @@
 # Student Registration System
 
-A Java EE based web application developed to manage student registrations, courses, and enrollments. The system provides user authentication, student management, course management, and enrollment management through a web-based interface.
+<p align="center">
+  <img src="screenshots/dashboard.png" width="800">
+</p>
 
-The project demonstrates the use of Java Servlets, JSP, JDBC, PostgreSQL, and MVC architecture principles.
+<h1 align="center">Student Registration System</h1>
+
+<p align="center">
+A Jakarta EE web application for managing students, courses, and enrollments.
+</p>
+
+---
+
+## Table of Contents
+
+* [Overview](#overview)
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [System Architecture](#system-architecture)
+* [Project Structure](#project-structure)
+* [Screenshots](#screenshots)
+* [Database Setup](#database-setup)
+* [Database Configuration](#database-configuration)
+* [Running the Application](#running-the-application)
+* [Demo Login Credentials](#demo-login-credentials)
+* [Database Relationships](#database-relationships)
+* [Known Limitations](#known-limitations)
+* [Future Improvements](#future-improvements)
+* [Author](#author)
+
+---
+
+# Overview
+
+The **Student Registration System** is a Jakarta EE based web application developed to manage student registrations, courses, and student-course enrollments.
+
+The system demonstrates the implementation of:
+
+* Jakarta Servlets
+* JSP (JavaServer Pages)
+* JDBC database connectivity
+* PostgreSQL relational database design
+* MVC architecture principles
+
+The application provides authentication, student management, course management, and enrollment functionality through a web-based interface.
 
 ---
 
 # Features
 
 ## User Management
-- User registration
-- User login authentication
-- User logout functionality
-- Session-based authentication
+
+* User registration
+* User login authentication
+* User logout functionality
+* Session-based authentication
 
 ## Student Management
-- Add new students
-- View registered students
-- Store student information:
-  - Student number
-  - First name
-  - Last name
-  - Email
-  - Phone number
+
+Users can:
+
+* Add new students
+* View registered students
+* Store student information:
+
+  * Student number
+  * First name
+  * Last name
+  * Email
+  * Phone number
 
 ## Course Management
-- Add courses
-- View available courses
-- Store course information:
-  - Course code
-  - Course name
-  - Credits
+
+Users can:
+
+* Add courses
+* View available courses
+* Store course information:
+
+  * Course code
+  * Course name
+  * Credits
 
 ## Enrollment Management
-- Enroll students into courses
-- Manage student-course relationships
-- Display current enrollments
-- Uses database foreign key relationships
+
+Users can:
+
+* Enroll students into courses
+* Manage student-course relationships
+* View current enrollments
+* Use relational database foreign key relationships
 
 ---
 
 # Technologies Used
 
 ## Backend
-- Java
-- Java Servlets
-- JDBC
-- MVC Architecture
+
+* Java
+* Jakarta Servlets
+* JDBC
+* MVC Architecture
 
 ## Frontend
-- JSP (JavaServer Pages)
-- HTML5
-- CSS
+
+* JSP (JavaServer Pages)
+* HTML5
+* CSS
+* JavaScript
 
 ## Database
-- PostgreSQL
 
-## Server
-- Apache Tomcat 10
+* PostgreSQL
+
+## Application Server
+
+* Apache Tomcat 10
 
 ## Development Environment
-- Apache NetBeans
+
+* Apache NetBeans
 
 ---
 
 # System Architecture
 
-The project follows an MVC architecture:
+The project follows the MVC (Model-View-Controller) architecture.
 
 ```
 User Interface (JSP)
@@ -81,32 +140,70 @@ DAO Layer (Database Operations)
 PostgreSQL Database
 ```
 
-### Model
+## Model
+
 Contains Java classes representing system entities:
 
-- User
-- Student
-- Course
-- Enrollment
+* User
+* Student
+* Course
+* Enrollment
 
-### View
+## View
+
 JSP pages responsible for displaying information:
 
-- Login page
-- Dashboard
-- Student management
-- Course management
-- Enrollment management
+* Login page
+* Registration page
+* Dashboard
+* Student management
+* Course management
+* Enrollment management
 
-### Controller
-Servlets handling requests:
+## Controller
 
-- LoginServlet
-- RegisterServlet
-- LogoutServlet
-- StudentServlet
-- CourseServlet
-- EnrollmentServlet
+Servlets responsible for handling requests:
+
+* LoginServlet
+* RegisterServlet
+* LogoutServlet
+* StudentServlet
+* CourseServlet
+* EnrollmentServlet
+
+---
+
+# Project Structure
+
+```
+StudentRegistrationSystem
+│
+├── src/java
+│   └── com.student
+│       ├── controller
+│       ├── dao
+│       ├── model
+│       └── util
+│
+├── web
+│   ├── JSP pages
+│   ├── CSS
+│   └── JavaScript
+│
+├── database
+│   ├── create_database.sql
+│   └── sample_data.sql
+│
+├── screenshots
+│   ├── login.png
+│   ├── register.png
+│   ├── dashboard.png
+│   ├── students.png
+│   ├── courses.png
+│   └── enrollment.png
+│
+└── README.md
+```
 
 ---
 
@@ -150,9 +247,9 @@ Servlets handling requests:
 
 # Database Setup
 
-The project uses PostgreSQL.
+The project uses PostgreSQL as the database management system.
 
-## 1. Create the Database
+## 1. Create Database
 
 Create a PostgreSQL database:
 
@@ -170,7 +267,7 @@ Navigate to:
 database/
 ```
 
-Run:
+Execute:
 
 ```
 create_database.sql
@@ -178,34 +275,33 @@ create_database.sql
 
 This creates:
 
-- users table
-- students table
-- courses table
-- enrollments table
-- constraints
-- relationships
+* users table
+* students table
+* courses table
+* enrollments table
+* primary keys
+* foreign keys
+* database constraints
 
-Optional:
+Optional sample data:
 
 ```
 sample_data.sql
 ```
 
-can be executed to insert example records.
+can be executed to insert example users, students, courses, and enrollments.
 
 ---
 
 # Database Configuration
 
-Update the database connection settings:
-
-Location:
+Database settings are located in:
 
 ```
 src/java/com/student/util/DBConnection.java
 ```
 
-Update:
+Update the following values:
 
 ```java
 private static final String URL =
@@ -232,14 +328,14 @@ with your local PostgreSQL password.
 
 Install:
 
-- Java JDK 21+
-- PostgreSQL
-- Apache Tomcat 10
-- Apache NetBeans
+* Java JDK 21+
+* PostgreSQL
+* Apache Tomcat 10
+* Apache NetBeans
 
 ---
 
-## Steps
+## Installation Steps
 
 ### 1. Clone Repository
 
@@ -256,14 +352,16 @@ Open Apache NetBeans:
 ```
 File
 → Open Project
-→ Select RegistrationSystem
+→ Select StudentRegistrationSystem
 ```
 
 ---
 
 ### 3. Configure Database
 
-Make sure PostgreSQL is running and update:
+Ensure PostgreSQL is running.
+
+Update:
 
 ```
 DBConnection.java
@@ -275,7 +373,7 @@ with your database credentials.
 
 ### 4. Configure Tomcat
 
-Add Apache Tomcat server:
+Add Apache Tomcat:
 
 ```
 Tools
@@ -291,7 +389,7 @@ Apache Tomcat 10
 
 ---
 
-### 5. Run Project
+### 5. Run Application
 
 In NetBeans:
 
@@ -300,27 +398,29 @@ Right Click Project
 → Run
 ```
 
-The application will open in your browser.
+The application will launch in your browser.
 
 ---
 
 # Demo Login Credentials
 
-For testing and demonstration purposes, the application includes a default user account.
+For demonstration purposes, the application includes the following account:
 
 | Username | Password |
-|----------|----------|
+| -------- | -------- |
 | admin    | admin123 |
 
 Use these credentials on the login page to access the dashboard.
 
-> Note: For a production deployment, passwords should be stored securely using password hashing (for example BCrypt) instead of plain text.
+> Security Note: This project uses plain-text passwords for demonstration purposes only. A production system should implement password hashing (such as BCrypt), salting, and secure session management.
+
+---
 
 # Database Relationships
 
-The system uses relational database design.
+The application uses relational database design principles.
 
-## Students
+## Student Relationship
 
 One student can have multiple enrollments.
 
@@ -328,10 +428,10 @@ One student can have multiple enrollments.
 students
     |
     |
- enrollments
+enrollments
 ```
 
-## Courses
+## Course Relationship
 
 One course can contain multiple students.
 
@@ -339,10 +439,10 @@ One course can contain multiple students.
 courses
     |
     |
- enrollments
+enrollments
 ```
 
-The enrollment table connects students and courses using foreign keys:
+The enrollment table connects both entities:
 
 ```
 student_id → students.student_id
@@ -352,29 +452,45 @@ course_id → courses.course_id
 
 ---
 
+# Known Limitations
+
+Current limitations:
+
+* Passwords are not encrypted
+* No update functionality
+* No delete functionality
+* No role-based access control
+* Basic input validation
+* Limited UI styling
+
+These features can be added in future versions.
+
+---
+
 # Future Improvements
 
 Possible improvements:
 
-- Password encryption using BCrypt
-- Student search functionality
-- Update and delete operations
-- Role-based access control
-- Improved UI design
-- Pagination for large datasets
-- REST API integration
+* Implement BCrypt password hashing
+* Add student search functionality
+* Add update and delete operations
+* Add role-based permissions
+* Improve UI/UX design
+* Add pagination for large datasets
+* Add REST API integration
+* Deploy application to cloud hosting
 
 ---
 
 # Author
 
-Freerk Van Den Bos
+**Freerk Van Den Bos**
 
-Bachelor of Computing  
+Bachelor of Computing
 Software Engineering
 
 ---
 
 # License
 
-This project is for educational and portfolio purposes.
+This project is developed for educational and portfolio purposes.
